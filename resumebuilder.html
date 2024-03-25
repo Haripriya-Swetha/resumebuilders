@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resumebuilder.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Resume Builder</h1>
+        <form id="resumeForm">
+          <div class="form-group">
+            <label for="name_input">Name:</label>
+            <input type="text" class="form-control" id="name_input" required>
+          </div>
+          <div class="form-group">
+            <label for="phone_input">Phone Number:</label>
+            <input type="text" class="form-control" id="phone_input" required>
+          </div>
+          <div class="form-group">
+            <label for="gmail_input">Gmail:</label>
+            <input type="email" class="form-control" id="gmail_input" required>
+          </div>
+          <div class="form-group">
+            <label for="github_input">GitHub Link:</label>
+            <input type="text" class="form-control" id="github_input" required>
+          </div>
+          <div class="form-group">
+            <label for="linkedin_input">LinkedIn Link:</label>
+            <input type="text" class="form-control" id="linkedin_input" required>
+          </div>
+          <hr>
+          <h3>Educational Qualifications</h3>
+          <div id="educational_qualifications">
+            <div class="form-group">
+              <label for="qualification_0">Qualification:</label>
+              <input type="text" class="form-control" id="qualification_0" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="addQualification()">Add Qualification</button>
+          <button type="button" class="btn btn-primary" onclick="removeQualification()">Remove</button>
+          <hr>
+          <h3>Work Experience</h3>  
+          <div id="work_experience">
+            <div class="form-group">
+              <label for="experience_0">Experience:</label>
+              <input type="text" class="form-control" id="experience_0" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="addExperience()">Add Work Experience</button>
+          <button type="button" class="btn btn-primary">Remove</button>
+          <hr>
+          <h3>Skills</h3>
+          <div id="skills">
+            <div class="form-group">
+              <label for="skill_0">Technical Skill:</label>
+              <input type="text" class="form-control" id="skill_0" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="addSkill()">Add Technical Skill</button>
+          <button type="button" class="btn btn-primary">Remove</button>
+          <hr>
+          <div id="skills">
+            <div class="form-group">
+              <label for="skill_1">Soft Skill:</label>
+              <input type="text" class="form-control" id="skill_1" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="addSkill()">Add Soft Skill</button>
+          <button type="button" class="btn btn-primary">Remove</button>
+          <hr>
+          <hr>
+          <h3>Certifications</h3>
+          <div id="certifications">
+            <div class="form-group">
+              <label for="certification_0">Certification:</label>
+              <input type="file" class="form-control" id="certification_0" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="addCertification()">Add Certification</button>
+          <button type="button" class="btn btn-primary">Remove</button>
+          <hr>
+          <button type="submit" class="btn btn-primary">Save Resume</button>
+          <button type="button" class="btn btn-primary" onclick="redirectToPage()">Print</button>
+          <script src="script.js">
+            function redirectToPage() {
+            window.location.href = "print.html";
+            }
+          </script>
+        </form>
+      </div>
+      <script src="resumebuilder.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  
+</head>
+
+<body>
+  <div class="container">
+    <h1><span id="name"></span> RESUME</h1>
+    <div class="resume-section">
+      <h2>Personal Information</h2>
+      <p><label></label> <span id="name"></span></p>
+      <p><label>Phone Number:</label> <span id="phoneNumber"></span></p>
+      <p><label>Address:</label> <span id="address"></span></p>
+      <p><label>Gmail:</label> <span id="gmail"></span></p>
+      <p><label>GitHub Link:</label> <span id="githubLink"></span></p>
+      <p><label>LinkedIn Link:</label> <span id="linkedinLink"></span></p>
+      <p><label>Objective</label> <span id="objective_Input"></span></p> 
+    </div>
+    <div class="resume-section">
+      <h2>Educational Qualifications</h2>
+      <ul id="educationalQualifications"></ul>
+    </div>
+    <div class="resume-section">
+      <h2>Work Experience</h2>
+      <ul id="workExperience"></ul>
+    </div>
+    <div class="resume-section">
+      <h2>Skills</h2>
+      <ul id="skills"></ul>
+    </div>
+    <div class="resume-section">
+      <h2>Certifications</h2>
+      <ul id="certifications"></ul>
+    </div>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    const resumeData = JSON.parse(localStorage.getItem('resumeData'));
+    if (resumeData) {
+      document.getElementById('name').textContent = resumeData.name;
+      document.getElementById('phoneNumber').textContent = resumeData.phoneNumber;
+      document.getElementById('address').textContent=resumeData.address;
+      document.getElementById('gmail').textContent = resumeData.gmail;
+      document.getElementById('githubLink').textContent = resumeData.githubLink;
+      document.getElementById('linkedinLink').textContent = resumeData.linkedinLink;
+
+      displayListItems('educationalQualifications', resumeData.educationalQualifications);
+      displayListItems('workExperience', resumeData.workExperience);
+      displayListItems('skills', resumeData.skills);
+      displayListItems('certifications', resumeData.certifications);
+    }
+    function displayListItems(containerId, items) {
+      const container = document.getElementById(containerId);
+      items.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        container.appendChild(listItem);
+      });
+    }
+    function printPage() {
+      window.print();
+    }
+  </script>
+</body>
+</html>
